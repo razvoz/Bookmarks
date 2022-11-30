@@ -20,9 +20,7 @@
   });
 
   const list = computed(() => {
-    return bookmarksStore.list.sort((a: IBookmark, b: IBookmark) => {
-      // нужно ли было тут указывать IBookmark? ведь и так связь прослеживается даже если убрать интерфейс
-
+    return [...bookmarksStore.list].sort((a: IBookmark, b: IBookmark) => {
       return +b.immediate - +a.immediate;
     });
   })
